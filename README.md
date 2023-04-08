@@ -81,8 +81,13 @@ catch(e)
 
 Silent SSO:
 To enable the silent check-sso, you have to provide a silentCheckSsoRedirectUri attribute in the init method. This URI needs to be a valid endpoint in the application (and of course it must be configured as a valid redirect for the client in the Keycloak Admin Console):
-  const authenticated=await authInit({ url: 'http://localhost:8080/', realm: 'keycloak-demo', clientId: 'app-vue',
-                                                    onLoad: 'check-sso',  silentCheckSsoRedirectUri: window.location.origin + '/silent-check-sso.html' });
+```javascript
+  const authenticated=await authInit({
+        url: 'http://localhost:8080/',
+        realm: 'keycloak-demo', clientId: 'app-vue',
+        onLoad: 'check-sso',
+        silentCheckSsoRedirectUri: window.location.origin + '/silent-check-sso.html' });
+```
 
 The page at the silent check-sso redirect uri is loaded in the iframe after successfully checking your authentication state and retrieving the tokens from the Keycloak server. It has no other task than sending the received tokens to the main application and should only look like this:
 
