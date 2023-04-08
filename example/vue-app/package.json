@@ -10,7 +10,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "keycloak-auth": "file:../../",
+    "keycloak-js-util": "file:../../",
     "vue": "^3.2.47"
   },
   "devDependencies": {

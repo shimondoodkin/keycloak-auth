@@ -19,7 +19,7 @@
 
 <script>
 
-import {authFetchText,authFetchJSON,authFetch} from 'keycloak-auth'
+import {authFetchText,authFetchJSON,authFetch} from 'keycloak-js-util'
 
 export default {
   data() {

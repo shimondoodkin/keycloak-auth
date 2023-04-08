@@ -4,7 +4,7 @@ import ErrorPage from './ErrorPage.vue'
 
 import './assets/main.css'
 
-import {authInit,setOnRefreshTokenError,getKeycloak} from 'keycloak-auth'
+import {authInit,setOnRefreshTokenError,getKeycloak} from 'keycloak-js-util'
 
 try {
   await authInit({ 
@@ -22,6 +22,8 @@ try {
     //  
     //   if onLoad:'login-required' is used then maybe refresh window.location.reload().
     //   or call getKeycloak().login() 
+    //   or createApp(AppPublic).mount('#app'); that shows a login button
+    //   or develop an app that works depending on getKeycloak().authenticated and show alogin button
 
     console.log('not authorized')
     getKeycloak().login()
