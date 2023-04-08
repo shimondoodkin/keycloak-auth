@@ -2,7 +2,6 @@
 
 User frindly js library for authentication with Keycloak.
 
-
 ## ⭐️ Features
 
 - async library
@@ -16,9 +15,9 @@ User frindly js library for authentication with Keycloak.
 - run run-keycloack-docker.bat
 - run python3 server.py or node server.js
 - run run-vue-app.bat or in folder: example\vue-app , run:  npm run dev
-- configure keycloak like in images in example\config   , it is only key points., add a user for example call it user with create credencials-> password type password, uncheck a change password . for production need to setup keycloak with an external database maybe kerberos, currently it is with memory temporaray database.
+- configure keycloak like described in https://github.com/shimondoodkin/keycloak-js-util/tree/master/example/config ( how to overcome cors and content security policy issues with keycloak)
 - try login to http://localhost:8081
-
+- 
 
 ##   Example 1
 
