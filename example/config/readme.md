@@ -36,14 +36,14 @@ frame-src 'self'; frame-ancestors 'self' localhost:8081; object-src 'none';
 ```
 ![](config4.png)
 
-how to find useful settings of the authentication realm endpoint.
+there are some useful valus that will help configure KrakenD authentication validation.
+
 in Realm settings> Endpoints
 
-there is a link to json of OpenID endpoint configuration.
-it is a link to json with a few useful values to use in other apps that validate (JWT)Json WEb Tokens, for krakend tok.
-like waht is the issuer name,
-and what s
+there is a link "OpenID endpoint configuration".
+it is a link to json file.
 
+it is possible to find there  (JWT)Json Web Token. issuer name to validate issuer name in KrakenD, and the "certs" url to to configure token signature validation in KrakenD
 ![](config5.png)
 
 
