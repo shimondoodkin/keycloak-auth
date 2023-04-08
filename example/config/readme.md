@@ -22,7 +22,8 @@ Realm settings>Security defenses>Content-Security-Policy
 add to frame-ancestors only hostname, without http(s):// and slash at end.
 
 ```text
-frame-src 'self'; frame-ancestors 'self' localhost:8081; object-src 'none';```
+frame-src 'self'; frame-ancestors 'self' localhost:8081; object-src 'none';
+```
 ![](config4.png)
 
 how to find useful settings of the authentication realm endpoint.
