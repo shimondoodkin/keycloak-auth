@@ -116,8 +116,14 @@ data = await result.json()
 ```
 
 
-in keycloak there are many useful functions
-see documentation:
+
+in keycloak there are many useful functions, see documentation:
+
+// keycloak-js:
+//   reference: https://www.keycloak.org/docs/latest/securing_apps/index.html#_javascript_adapter
+//   source code of keycloak-js: https://github.com/keycloak/keycloak/tree/main/js/libs/keycloak-js
+//   npm pakcage: https://www.npmjs.com/package/keycloak-js
+
 
 list of methods of keycloak instance:
 
