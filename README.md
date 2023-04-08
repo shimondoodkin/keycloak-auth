@@ -17,7 +17,6 @@ User frindly js library for authentication with Keycloak.
 - run run-vue-app.bat or in folder: example\vue-app , run:  npm run dev
 - configure keycloak like described in https://github.com/shimondoodkin/keycloak-js-util/tree/master/example/config ( how to overcome cors and content security policy issues with keycloak)
 - try login to http://localhost:8081
-- 
 
 ##   Example 1
 
