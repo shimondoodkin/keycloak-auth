@@ -1,1 +1,1 @@
-![alt text](config/config1.png)
+![alt text](config1.png)
