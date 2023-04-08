@@ -1,15 +1,19 @@
 {
-  "name": "keycloak-auth",
-  "version": "1.0.0",
-  "description": "",
+  "name": "keycloak-js-util",
+  "version": "1.0.1",
+  "description": "Simplified access to keycloak-js",
   "main": "dist/keycloak-auth.js",
   "module": "src/keycloak-auth.js",
   "scripts": {
     "test": "npx jest",
     "build": "npx webpack"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shimondoodkin/keycloak-js-util.git"
+  },
+  "keywords": ["keycloak-js","keycloak"],
+  "author": "Shimon Doodkin <helpmepro1@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.21.4",
