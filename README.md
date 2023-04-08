@@ -24,7 +24,7 @@ User frindly js library for authentication with Keycloak.
 
 ```javascript
 
-import {authInit,setOnRefreshTokenError,getKeycloak} from 'keycloak-auth'
+import {authInit,setOnRefreshTokenError,getKeycloak} from 'keycloak-js-util'
 
 try {
   await authInit({ 
@@ -105,7 +105,7 @@ The page at the silent check-sso redirect uri is loaded in the iframe after succ
 ```javascript
 
 
-import {authFetchText,authFetchJSON,authFetch} from 'keycloak-auth'
+import {authFetchText,authFetchJSON,authFetch} from 'keycloak-js-util'
 
 data = await authFetchText('http://localhost:8082/v1/test.txt')
 data = await authFetchJSON('http://localhost:8082/v1/test.json')
