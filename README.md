@@ -6,7 +6,8 @@ User frindly js library for authentication with Keycloak.
 
 - async library
 - basic login
-- fetch with authorization header
+- easy to use async fetch wrappers that add authorization bearer token header
+- tested
 
 ## ✅ running the example:
 
