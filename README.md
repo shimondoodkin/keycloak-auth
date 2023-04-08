@@ -119,14 +119,16 @@ data = await result.json()
 
 in keycloak there are many useful functions, see documentation:
 
+```javascript
 // keycloak-js:
 //   reference: https://www.keycloak.org/docs/latest/securing_apps/index.html#_javascript_adapter
 //   source code of keycloak-js: https://github.com/keycloak/keycloak/tree/main/js/libs/keycloak-js
 //   npm pakcage: https://www.npmjs.com/package/keycloak-js
-
+```
 
 list of methods of keycloak instance:
 
+```javascript
   keycloak.init(options) // redirects if onload is logins required 
   keycloak.login(options) // redirects
   keycloak.createLoginUrl(options)
@@ -142,10 +144,10 @@ list of methods of keycloak instance:
   keycloak.isTokenExpired(minValidity)
   keycloak.updateToken(minValidity)
   keycloak.clearToken()
-
+```
 
 list of properties of keycloak instance:
-
+```javascript
   keycloak.authenticated
   keycloak.token
   keycloak.tokenParsed
@@ -161,6 +163,6 @@ list of properties of keycloak instance:
   keycloak.flow
   keycloak.adapter
   keycloak.responseType
-
+```
 
 Written by Shimon Doodkin
