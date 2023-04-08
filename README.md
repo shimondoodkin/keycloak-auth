@@ -133,7 +133,7 @@ in keycloak there are many useful functions, see documentation:
 list of methods of keycloak instance:
 
 ```javascript
-  keycloak.init(options) // redirects if onload is logins required 
+  keycloak.init(options) // redirects if onLoad:'login-required'
   keycloak.login(options) // redirects
   keycloak.createLoginUrl(options)
   keycloak.logout(options) // redirects
