@@ -1,0 +1,75 @@
+{
+  "$schema": "https://www.krakend.io/schema/v3.json",
+  "version": 3,
+  "name": "KrakenD - API Gateway",
+  "timeout": "3000ms",
+  "cache_ttl": "300s",
+  "endpoints": [
+
+
+    {
+      "endpoint": "/v1/test",
+      "method": "GET",
+      "output_encoding": "no-op",
+      "input_headers": [
+        "x-user",
+        "x-roles",
+        "x-resources"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/",
+          "encoding": "json",
+          "sd": "static",
+          "method": "GET",
+          "host": [
+            "http://host.docker.internal:5000"
+          ],
+          "disable_host_sanitize": false
+        }
+      ],
+      "extra_config": {
+        "auth/validator": {
+
+          "propagate_claims": [
+                ["sub", "x-user"],
+                ["realm_access.roles", "x-roles"],
+                ["resource_access.account.roles", "x-resources"]
+          ],
+          "alg": "RS256",
+          "jwk_url": "http://host.docker.internal:8080/realms/keycloak-demo/protocol/openid-connect/certs",
+          "disable_jwk_security": true,
+          "issuer": "http://localhost:8080/realms/keycloak-demo",
+          "roles": [
+           
+          ],
+          "operation_debug": true
+        }
+      }
+
+    }
+
+
+  ],
+  "output_encoding": "json",
+  "extra_config": {
+    "security/cors": {
+      "allow_origins": [
+        "http://localhost:8081"
+      ],
+      "expose_headers": [
+        "Content-Length","Authorization"
+      ],
+      "max_age": "12h",
+      "allow_methods": [
+        "GET",
+        "HEAD",
+        "POST"
+      ],
+      "allow_headers": [
+        "Authorization"
+      ],
+      "debug":true
+    }
+  }
+}

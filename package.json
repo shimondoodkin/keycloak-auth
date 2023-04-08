@@ -1,0 +1,28 @@
+{
+  "name": "keycloak-auth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/keycloak-auth.js",
+  "module": "src/keycloak-auth.js",
+  "scripts": {
+    "test": "npx jest",
+    "build": "npx webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.21.2",
+    "babel-jest": "^29.5.0",
+    "cross-env": "^7.0.3",
+    "jest": "^29.5.0",
+    "jest-environment-jsdom": "^29.5.0",
+    "lodash": "^4.17.21",
+    "webpack": "^5.78.0",
+    "webpack-cli": "^5.0.1"
+  },
+  "dependencies": {
+    "keycloak-js": "^21.0.2"
+  }
+}

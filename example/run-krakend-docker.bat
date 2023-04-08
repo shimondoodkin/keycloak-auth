@@ -1,0 +1,1 @@
+docker run --rm -it -p "8082:8080" --add-host host.docker.internal:host-gateway -v C:\Users\user\Documents\projects\kerberos\keycloak-auth\example\krakend.json:/etc/krakend/krakend.json devopsfaith/krakend
