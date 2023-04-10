@@ -8,7 +8,9 @@
 
     <button @click="fetchData">Fetch Data</button>
     <br />
+    <div v-if="loading">loading</div>
     <div v-if="data">result: <b><pre>{{ data }}</pre></b></div>
+    <div v-if="error">error: <b><pre>{{ error }}</pre></b></div>
     <br />
     <button @click="logout">logout</button> &nbsp;  
     <button @click="account">account</button> &nbsp;  
@@ -25,6 +27,8 @@ export default {
   data() {
     return {
       data: this.data||null,
+      error: this.error||null,
+      loading: this.loading||null,
       hasRole: this.hasRole||null,
       profile: this.profile||null,
     };
@@ -35,11 +39,22 @@ export default {
   },
   methods: {
     async fetchData() {
-      this.data = await authFetchText('http://localhost:8082/v1/test')
-      // this.data = await authFetchJSON('http://localhost:8082/v1/test')
-      // const result = await authFetch('http://localhost:8082/v1/test')
-      // this.data = await result.json()
+      try {
+        this.error=false
+        this.loading=true
 
+        this.data = await authFetchText('http://localhost:8082/v1/test')
+        // this.data = await authFetchJSON('http://localhost:8082/v1/test')
+        // const result = await authFetch('http://localhost:8082/v1/test')
+        // this.data = await result.json()
+
+      } catch(e){
+        this.error=e.message
+      }
+      finally {
+        this.loading=false
+      }
+      
     },
     logout() {
       window.keycloak.logout();

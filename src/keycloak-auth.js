@@ -35,6 +35,7 @@ export function authFetch(url,options={}) {
   return fetch(url,options);
 }
 
+
 // async function authFetchJSON(url,options)
 //
 // example:
@@ -44,6 +45,13 @@ export function authFetch(url,options={}) {
 //    const result = await authFetchJSON('http://api-gw/my-rest-api')
 //
 export async function authFetchJSON(url,options={}) {
+  if (!response.ok) {
+    // create error object and reject if not a 2xx response code
+    let err = new Error("HTTP status code: " + response.status)
+    err.response = response
+    err.status = response.status
+    throw err
+  }
   return await (await authFetch(url,options)).json()
 }
 
@@ -56,7 +64,34 @@ export async function authFetchJSON(url,options={}) {
 //    const result = await authFetchText('http://api-gw/my-rest-api')
 //
 export async function authFetchText(url,options={}) {
+  if (!response.ok) {
+    // create error object and reject if not a 2xx response code
+    let err = new Error("HTTP status code: " + response.status)
+    err.response = response
+    err.status = response.status
+    throw err
+  }
   return await (await authFetch(url,options)).text()
+}
+
+// async function authFetchBlob(url,options)
+//
+// example:
+//
+//    import {authFetchBlob} from './keycloakAuth.js'
+//    // authInit() // see authInit example
+//    const result = await authFetchBlob('http://api-gw/my-rest-api')
+//
+export async function authFetchBlob(url,options={}) {
+  const response = await authFetch(url,options);
+  if (!response.ok) {
+    // create error object and reject if not a 2xx response code
+    let err = new Error("HTTP status code: " + response.status)
+    err.response = response
+    err.status = response.status
+    throw err
+  }
+  return await (response).blob()
 }
 
 // callback for token refresh error, like you have been logged-out by the server

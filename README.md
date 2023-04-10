@@ -11,12 +11,16 @@ User frindly js library for authentication with Keycloak.
 
 ## ✅ running the example:
 
-- in file examples\run-krakend-docker.bat update full path.
-- run run-krakend-docker.bat
-- run run-keycloack-docker.bat
-- run python3 server.py or node server.js
-- run run-vue-app.bat or in folder: example\vue-app , run:  npm run dev
-- configure keycloak like described in https://github.com/shimondoodkin/keycloak-js-util/tree/master/example/config ( how to overcome cors and content security policy issues with keycloak)
+there is an example at https://github.com/shimondoodkin/keycloak-js-util/tree/master/example
+- you need to have doker installed.
+- git clone https://github.com/shimondoodkin/keycloak-js-util.git
+- in the example folder:
+- run all bat files:
+  - run-krakend-docker.bat
+  - run-keycloack-docker.bat
+  - run-server.bat or python3 server.py or node server.js
+  - run-vue-app.bat or enter folder: example\vue-app and run:  npm run dev
+- configure keycloak like described in https://github.com/shimondoodkin/keycloak-js-util/tree/master/example/config ( describes how to overcome CORS and content security policy issues with keycloak) open key cloak at  http://localhost:8080
 - try login to http://localhost:8081
 
 ##   Example 1
@@ -111,11 +115,16 @@ The page at the silent check-sso redirect uri is loaded in the iframe after succ
 
 import {authFetchText,authFetchJSON,authFetch} from 'keycloak-js-util'
 
-data = await authFetchText('http://localhost:8082/v1/test.txt')
-data = await authFetchJSON('http://localhost:8082/v1/test.json')
- 
-const result = await authFetch('http://localhost:8082/v1/test')
-data = await result.json()
+const data = await authFetchText('http://localhost:8082/v1/test.txt')
+const data = await authFetchJSON('http://localhost:8082/v1/test.json')
+const data = await authFetchBlob('http://localhost:8082/v1/test.jpg')
+
+
+const response = await authFetch('http://localhost:8082/v1/test')
+if(!response.ok)
+  throw new Error('Http status code='+response.code)
+const data = await response.json()
+
 
 ```
 
