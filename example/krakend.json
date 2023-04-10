@@ -11,6 +11,8 @@
       "endpoint": "/v1/test",
       "method": "GET",
       "output_encoding": "json",
+
+
       "input_headers": [
         "x-user",
         "x-roles",
