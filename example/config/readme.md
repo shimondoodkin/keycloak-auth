@@ -1,20 +1,20 @@
 # gettings started configuring keycloak
 
-tl;dr:
+## tl;dr:
 
- # go to http://localhost:8080/
- # create a realm : keycloak-demo
- # create a client with clientid,: app-vue
- # create a client, page 2: don't change anything (keep Client authentication = Off, Standard flow = 🗹 checked , Direct access grants= 🗹 checked)
- # create a client, page 3
+ 1. go to http://localhost:8080/
+ 2. create a realm : keycloak-demo
+ 3. create a client with clientid,: app-vue
+ 4. create a client, page 2: don't change anything (keep Client authentication = Off, Standard flow = 🗹 checked , Direct access grants= 🗹 checked)
+ 5. create a client, page 3
   - Root URL (with / at end): http://localhost:8081/
   - Valid redirect URIs(with /* at end): http://localhost:8081/*
   - Web origins (no / at end): http://localhost:8081
- # in Realm settings, Tab: Security defenses
+ 6. in Realm settings, Tab: Security defenses
   - in Content-Security-Policy after frame-ancestors 'self' add app hostname: localhost:8081
   - result is: 
     - frame-src 'self'; frame-ancestors 'self' localhost:8081; object-src 'none';
- # Users
+ 7. Users
   - Create new user
   - username: user, click create.
   - in Tab: Credenctials, click Set password.
@@ -24,7 +24,8 @@ tl;dr:
     - click save
     - click again save password
 
-# go to http://localhost:8081/ and login
+ 8. go to http://localhost:8081/ and login
+ 
 --
 
 in this tutoreial I will only cover how to overcome cors and content security policy issues.
