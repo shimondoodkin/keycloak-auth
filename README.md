@@ -2,6 +2,10 @@
 
 User frindly js library for authentication with Keycloak.
 
+```
+npm install keycloak-js-util
+```
+
 ## ⭐️ Features
 
 - async library
