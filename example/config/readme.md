@@ -2,7 +2,7 @@
 
 ## tl;dr:
 
- 1. go to http://localhost:8080/
+ 1. go to keycloak http://localhost:8080/
  2. create a realm : keycloak-demo
  3. create a client with clientid,: app-vue
  4. create a client, page 2: don't change anything (keep Client authentication = Off, Standard flow = 🗹 checked , Direct access grants= 🗹 checked)
@@ -24,7 +24,7 @@
     - click save
     - click again save password
 
- 8. go to http://localhost:8081/ and login
+ 8. go to app http://localhost:8081/ and login
  
 --
 
