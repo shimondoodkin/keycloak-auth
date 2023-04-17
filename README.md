@@ -12,6 +12,10 @@ npm install keycloak-js-util
 - basic login
 - easy to use async fetch wrappers that add authorization bearer token header
 - tested
+- Correct keyclock CORS and CSP(content security policy) configuration: 
+  https://github.com/shimondoodkin/keycloak-js-util/tree/master/example/config
+- Correct krakend (CORS) configuration:
+  https://github.com/shimondoodkin/keycloak-js-util/blob/master/example/krakend.json
 
 ## ✅ running the example:
 
