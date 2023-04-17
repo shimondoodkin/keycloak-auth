@@ -1,6 +1,6 @@
 {
   "name": "keycloak-js-util",
-  "version": "1.1.1",
+  "version": "1.2.1",
   "description": "Simplified access to keycloak-js",
   "main": "dist/keycloak-auth.js",
   "module": "src/keycloak-auth.js",

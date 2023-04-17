@@ -45,6 +45,7 @@ export function authFetch(url,options={}) {
 //    const result = await authFetchJSON('http://api-gw/my-rest-api')
 //
 export async function authFetchJSON(url,options={}) {
+  const response = await authFetch(url,options);
   if (!response.ok) {
     // create error object and reject if not a 2xx response code
     let err = new Error("HTTP status code: " + response.status)
@@ -64,6 +65,7 @@ export async function authFetchJSON(url,options={}) {
 //    const result = await authFetchText('http://api-gw/my-rest-api')
 //
 export async function authFetchText(url,options={}) {
+  const response = await authFetch(url,options);
   if (!response.ok) {
     // create error object and reject if not a 2xx response code
     let err = new Error("HTTP status code: " + response.status)
