@@ -49,8 +49,48 @@
         }
       }
 
-    }
+    },
 
+
+
+    {
+      "endpoint": "/v1/jwt-revoke",
+      "method": "GET",
+      "output_encoding": "string",
+      "cache_ttl": "1s",
+      "input_headers": [
+        "x-jti"
+      ],
+      "backend": [
+        {
+          "url_pattern": "/addheader",
+          "encoding": "string",
+          "sd": "static",
+          "method": "GET",
+          "host": [
+            "http://host.docker.internal:8083"
+          ],
+          "disable_host_sanitize": false
+        }
+      ],
+      "extra_config": {
+        "auth/validator": {
+
+          "propagate_claims": [
+                ["jti", "x-jti"]
+          ],
+          "alg": "RS256",
+          "jwk_url": "http://host.docker.internal:8080/realms/keycloak-demo/protocol/openid-connect/certs",
+          "disable_jwk_security": true,
+          "issuer": "http://localhost:8080/realms/keycloak-demo",
+          "roles": [
+           
+          ],
+          "operation_debug": true
+        }
+      }
+
+    }
 
   ],
   "output_encoding": "json",
@@ -72,6 +112,15 @@
         "Authorization"
       ],
       "debug":true
+    },
+
+    "auth/revoker": {
+      "N": 10000000,
+      "P": 0.0000001,
+      "hash_name": "optimal",
+      "TTL": 1500,
+      "port": 1234,
+      "token_keys": ["jti"]
     }
   }
 }

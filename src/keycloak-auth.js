@@ -254,11 +254,17 @@ export async function authInit(initOptions={}) {
 }
 
 // clean up
-export function cleanup(){
+export function stopTokenRefreshTimer(){
   if(tokenRefreshTimer){
     clearTimeout(tokenRefreshTimer)
     tokenRefreshTimer=false;
   }
+}
+
+
+// clean up
+export function cleanup(){
+ stopTokenRefreshTimer()
  if(keycloak&&keycloak.clearToken)keycloak.clearToken();
  keycloak=null;
  window.keycloak=null;
