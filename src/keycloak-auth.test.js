@@ -1,5 +1,5 @@
 import { describe, expect, test, jest } from '@jest/globals';
-import { authFetch, authFetchJSON, authFetchText, authInit, refreshToken, setOnRefreshTokenError,  cleanup } from './keycloak-auth';
+import { authFetch, authFetchJSON, authFetchText, authFetchBlob, authInit, refreshToken, setOnRefreshTokenError,  cleanup } from './keycloak-auth';
 import Keycloak from 'keycloak-js';
 jest.mock('keycloak-js'); // 'keycloak-js' is now a mock constructor
 
@@ -124,6 +124,8 @@ describe('keycloakAuth', () => {
       const savedFetch = global.fetch;
       const mockFetch = global.fetch = jest.fn(() =>
         Promise.resolve({
+          ok:true,
+          status:200,
           json: () => Promise.resolve(mockResponse),
         })
       );
@@ -166,6 +168,8 @@ describe('keycloakAuth', () => {
       const savedFetch = global.fetch;
       const mockFetch = global.fetch = jest.fn(() =>
         Promise.resolve({
+          ok:true,
+          status:200,
           text: () => Promise.resolve(mockResponse),
         })
       );
@@ -175,6 +179,49 @@ describe('keycloakAuth', () => {
         window.keycloak.token = token;
 
         const result = await authFetchText("http://example.com", {
+          method: "GET",
+          headers: { "Accept": "text/plain" },
+        });
+
+        expect(mockFetch).toHaveBeenCalledWith("http://example.com", {
+          method: "GET",
+          headers: {
+            "Accept": "text/plain",
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        expect(result).toEqual(mockResponse);
+
+      }
+      finally {
+        global.fetch.mockClear();
+        global.fetch = savedFetch;
+      }
+
+    });
+  });
+    
+  describe("authFetchBlob function", () => {
+    it("should return blob response", async () => {
+      const mockResponse = new Blob(["sample blob response"], { type: "text/plain" });
+      
+      await authenticate();
+
+      const savedFetch = global.fetch;
+      const mockFetch = global.fetch = jest.fn(() =>
+        Promise.resolve({
+          ok:true,
+          status:200,
+          blob: () => Promise.resolve(mockResponse),
+        })
+      );
+      try {
+
+        const token = "sampleToken123";
+        window.keycloak.token = token;
+
+        const result = await authFetchBlob("http://example.com", {
           method: "GET",
           headers: { "Accept": "text/plain" },
         });

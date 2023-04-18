@@ -53,7 +53,7 @@ export async function authFetchJSON(url,options={}) {
     err.status = response.status
     throw err
   }
-  return await (await authFetch(url,options)).json()
+  return await response.json()
 }
 
 // async function authFetchText(url,options)
@@ -73,7 +73,7 @@ export async function authFetchText(url,options={}) {
     err.status = response.status
     throw err
   }
-  return await (await authFetch(url,options)).text()
+  return await response.text()
 }
 
 // async function authFetchBlob(url,options)
@@ -93,7 +93,7 @@ export async function authFetchBlob(url,options={}) {
     err.status = response.status
     throw err
   }
-  return await (response).blob()
+  return await response.blob()
 }
 
 // callback for token refresh error, like you have been logged-out by the server
