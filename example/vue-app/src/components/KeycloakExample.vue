@@ -96,7 +96,8 @@ export default {
     },
 
     async see_profile2() {
-      this.data =  JSON.stringify( await window.keycloak.loadUserProfile() ,null,2);
+      const profile  = await window.keycloak.loadUserProfile();
+      this.data =  JSON.stringify( profile ,null,2); // make json formated for viewing.
       this.token = '';
     },
 
