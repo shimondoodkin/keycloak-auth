@@ -16,6 +16,21 @@ npm install keycloak-js-util
   https://github.com/shimondoodkin/keycloak-js-util/tree/master/example/config
 - Correct krakend (CORS) configuration:
   https://github.com/shimondoodkin/keycloak-js-util/blob/master/example/krakend.json
+  
+
+## ⭐️ notes
+
+- the documentation for keycloak-js is at:
+  https://www.keycloak.org/docs/latest/securing_apps/index.html#_javascript_adapter
+
+- the reference for keycloak-js is at:
+  https://www.keycloak.org/docs/latest/securing_apps/index.html#javascript-adapter-reference
+
+- my modified simple revoker:
+  https://github.com/shimondoodkin/KrakenD-playground-community/blob/master/images/jwt-revoker/main.go#L38
+  i have added the addheader method. the idea was simply by calling the url it would revoke the token.
+  the configuration for revoker is at
+  https://github.com/shimondoodkin/keycloak-js-util/blob/master/example/krakend.json#L56
 
 ## ✅ running the example:
 
@@ -28,6 +43,7 @@ there is an example at https://github.com/shimondoodkin/keycloak-js-util/tree/ma
   - run-keycloack-docker.bat
   - run-server.bat or python3 server.py or node server.js
   - run-vue-app.bat or enter folder: example\vue-app and run:  npm run dev
+  - run-krakend-revoker-docker.bat - run it after krakend already started
 - configure keycloak like described in https://github.com/shimondoodkin/keycloak-js-util/tree/master/example/config ( describes how to overcome CORS and content security policy issues with keycloak) open key cloak at  http://localhost:8080
 - try login to http://localhost:8081
 
