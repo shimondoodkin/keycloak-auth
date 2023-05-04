@@ -18,14 +18,6 @@ npm install keycloak-js-util
   https://github.com/shimondoodkin/keycloak-js-util/blob/master/example/krakend.json
   
 
-## 🗒 notes
-
-- The documentation for keycloak-js is at:
-  https://www.keycloak.org/docs/latest/securing_apps/index.html#_javascript_adapter
-
-- The reference for keycloak-js is at:
-  https://www.keycloak.org/docs/latest/securing_apps/index.html#javascript-adapter-reference
-
 ## 🗒 notes about the revoker
 
 - My modified simple revoker is at:
@@ -167,9 +159,18 @@ const data = await response.json()
     
 ## in keycloak-js documentation:
 
-there are many useful functions like ` await window.keycloak.loadUserProfile() ` 
+there are many useful functions like ` await window.keycloak.loadUserProfile() ` [example](example/vue-app/src/components/KeycloakExample.vue#L110)
 
-https://github.com/shimondoodkin/keycloak-js-util/blob/master/example/vue-app/src/components/KeycloakExample.vue#L110
+- The documentation for keycloak-js is at:
+  https://www.keycloak.org/docs/latest/securing_apps/index.html#_javascript_adapter
+
+- The reference for keycloak-js is at:
+  https://www.keycloak.org/docs/latest/securing_apps/index.html#javascript-adapter-reference
+
+- The source code of keycloak-js: https://github.com/keycloak/keycloak/tree/main/js/libs/keycloak-js
+
+- The npm pakcage: https://www.npmjs.com/package/keycloak-js
+
 
 ```javascript
 // keycloak-js:
