@@ -157,9 +157,9 @@ const data = await response.json()
     }
 ```
     
-## in keycloak-js documentation:
+## keycloak-js documentation:
 
-there are many useful functions like ` await window.keycloak.loadUserProfile() ` [example](example/vue-app/src/components/KeycloakExample.vue#L110)
+In keycloak-js there are many useful functions like ` await window.keycloak.loadUserProfile() ` [example](example/vue-app/src/components/KeycloakExample.vue#L110)
 
 - The documentation for keycloak-js is at:
   https://www.keycloak.org/docs/latest/securing_apps/index.html#_javascript_adapter
