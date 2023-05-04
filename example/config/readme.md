@@ -10,6 +10,7 @@
   - Root URL (with / at end): http://localhost:8081/
   - Valid redirect URIs(with /* at end): http://localhost:8081/*
   - Web origins (no / at end): http://localhost:8081
+  - Admin USR: should be empty
  6. in Realm settings, Tab: Security defenses
   - in Content-Security-Policy after frame-ancestors 'self' add app hostname: localhost:8081
   - result is: 
@@ -56,6 +57,7 @@ In editing a client settings> Acceess Settings:
  - Root URL: website url with slash at end
  - valid redirect URIs: website url with /* at end
  - Web origins(CORS): protocol and website domain without slash at end. - to allow accessing keycloack server from websites with this origin.
+ - Admin URL: the admin url should be empty. Explanation:  the admin url is a url that the keycloak server requests, with jwt signed header, the that contains a special request to cancel old jwt tokens. inside the jwt it tells since when to cancel all login JWT tokens. like cancel all logins since hacked network leak. for JWT validator filter server.
 ![](config2.png)
 
 
