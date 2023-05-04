@@ -17,15 +17,6 @@ npm install keycloak-js-util
 - Correct krakend (CORS) configuration:
   https://github.com/shimondoodkin/keycloak-js-util/blob/master/example/krakend.json
   
-
-## 🗒 notes about the revoker
-
-- My modified simple revoker is at:
-  https://github.com/shimondoodkin/KrakenD-playground-community/blob/master/images/jwt-revoker/main.go#L38
- - I have added the addheader method. the idea was simply by calling the url it would revoke the token. The propogate claims gives the jti header to the revoker.
- - The krakend configuration for revoker is at: https://github.com/shimondoodkin/keycloak-js-util/blob/master/example/krakend.json#L56
- - The simple revoker has minor problems: https://github.com/shimondoodkin/KrakenD-playground-community/blob/master/images/jwt-revoker/usage.md#problems
-
 ## ✅ running the example:
 
 there is an example at https://github.com/shimondoodkin/keycloak-js-util/tree/master/example
@@ -156,6 +147,16 @@ const data = await response.json()
       window.keycloak.logout();
     }
 ```
+
+
+## 🗒 notes about the revoker
+
+- My modified simple revoker is at:
+  https://github.com/shimondoodkin/KrakenD-playground-community/blob/master/images/jwt-revoker/main.go#L38
+ - I have added the addheader method. the idea was simply by calling the url it would revoke the token. The propogate claims gives the jti header to the revoker.
+ - The krakend configuration for revoker is at: https://github.com/shimondoodkin/keycloak-js-util/blob/master/example/krakend.json#L56
+ - The simple revoker has minor problems: https://github.com/shimondoodkin/KrakenD-playground-community/blob/master/images/jwt-revoker/usage.md#problems
+
     
 ## keycloak-js documentation:
 
