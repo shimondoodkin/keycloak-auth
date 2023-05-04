@@ -18,7 +18,7 @@ npm install keycloak-js-util
   https://github.com/shimondoodkin/keycloak-js-util/blob/master/example/krakend.json
   
 
-## ⭐️ notes
+## 🗒 notes
 
 - the documentation for keycloak-js is at:
   https://www.keycloak.org/docs/latest/securing_apps/index.html#_javascript_adapter
