@@ -26,12 +26,13 @@ npm install keycloak-js-util
 - The reference for keycloak-js is at:
   https://www.keycloak.org/docs/latest/securing_apps/index.html#javascript-adapter-reference
 
-- My modified simple revoker:
+## 🗒 notes about the revoker
+
+- My modified simple revoker is at:
   https://github.com/shimondoodkin/KrakenD-playground-community/blob/master/images/jwt-revoker/main.go#L38
-  I have added the addheader method. the idea was simply by calling the url it would revoke the token. The propogate claims gives the jti header to the revoker.
-  The krakend configuration for revoker is at
-  https://github.com/shimondoodkin/keycloak-js-util/blob/master/example/krakend.json#L56
-  The simple revoker has minor problems: https://github.com/shimondoodkin/KrakenD-playground-community/blob/master/images/jwt-revoker/usage.md#problems
+ - I have added the addheader method. the idea was simply by calling the url it would revoke the token. The propogate claims gives the jti header to the revoker.
+ - The krakend configuration for revoker is at: https://github.com/shimondoodkin/keycloak-js-util/blob/master/example/krakend.json#L56
+ - The simple revoker has minor problems: https://github.com/shimondoodkin/KrakenD-playground-community/blob/master/images/jwt-revoker/usage.md#problems
 
 ## ✅ running the example:
 
