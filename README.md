@@ -28,8 +28,8 @@ npm install keycloak-js-util
 
 - my modified simple revoker:
   https://github.com/shimondoodkin/KrakenD-playground-community/blob/master/images/jwt-revoker/main.go#L38
-  i have added the addheader method. the idea was simply by calling the url it would revoke the token.
-  the configuration for revoker is at
+  I have added the addheader method. the idea was simply by calling the url it would revoke the token. The propogate claims gives the jti header to the revoker.
+  The krakend configuration for revoker is at
   https://github.com/shimondoodkin/keycloak-js-util/blob/master/example/krakend.json#L56
 
 ## ✅ running the example:
