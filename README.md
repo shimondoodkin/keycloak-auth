@@ -151,12 +151,24 @@ if(!response.ok)
   throw new Error('Http status code='+response.code)
 const data = await response.json()
 
-
 ```
 
 
+##   Example 3 - revoke and logout
 
-in keycloak there are many useful functions, see documentation:
+```javascript
+
+    async revokeLogout() {
+      stopTokenRefreshTimer();
+      await authFetchText('http://localhost:8082/v1/jwt-revoke')
+      window.keycloak.logout();
+    }
+```
+    
+## in keycloak-js there are many useful functions, see documentation:
+like ` await window.keycloak.loadUserProfile() ` 
+
+https://github.com/shimondoodkin/keycloak-js-util/blob/master/example/vue-app/src/components/KeycloakExample.vue#L110
 
 ```javascript
 // keycloak-js:
